@@ -119,6 +119,22 @@ wp_enqueue_script( 'vg_card_ajax_js', plugins_url( '/js/cardajax.js' , __FILE__)
 
 add_filter('query_vars', 'vgcardutils_queryvars' );
 
+global $__VGPowerEnum__;
+$__VGPowerEnum__ = array('-',0,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000);
+global $__VGUnittypeEnum__;
+$__VGUnittypeEnum__ = array(1=>'普通单位',2=>'触发单位');
+global $__VGGradeEnum__;
+$__VGGradeEnum__ = array('-',3,2,1,0,4);
+global $__VGShieldEnum__;
+$__VGShieldEnum__ = array('-','-',0,5000,10000);
+global $__VGCriticalEnum__;
+$__VGCriticalEnum__ = array('-',1,2,3);
+global $__VGTriggerEnum__;
+$__VGTriggerEnum__ = array('-','-','醒','治','引','☆');
+global $__VGSkillEnum__;
+$__VGSkillEnum__ = array('-','双判','截击','支援');
+
+
 function vgcardutils_queryvars( $vars )
 {
 	$vars[] = 'card';

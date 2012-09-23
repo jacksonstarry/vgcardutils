@@ -1,1 +1,32 @@
 @CHARSET "UTF-8";
+.VGCardIMG {
+	height:510px;
+	width:350px;
+	display:block;
+}
+.VGFields{
+	float:left;
+}
+.VGFields p {
+	margin:2px 2px;
+}
+.VGFieldName {
+	float:left;
+	clear:left;
+	width:70px;
+	display:block;
+}
+.VGFieldNameLabel {
+	float:left;
+	clear:left;
+	width:70px;
+	display:block;
+}
+.VGFieldValue {
+	width:330px;
+	clear:right;
+}
+#VGCardAdd select, #VGCardAdd input {
+	width:200px;
+	clear:right;
+}
