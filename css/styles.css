@@ -2,7 +2,10 @@
 .VGCardIMG {
 	height:510px;
 	width:350px;
-	display:block;
+}
+.VGCardThumb {
+	height:182px;
+	width:125px;
 }
 .VGFields{
 	float:left;
