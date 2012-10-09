@@ -152,16 +152,13 @@ function vg_card_create_menu() {
 		add_submenu_page($main_menu_slug,'一灭寂咔嚓设置', '所有卡片', 'read', $main_menu_slug, 'vg_card_list_page');
 		add_submenu_page($main_menu_slug,'一灭寂咔嚓设置', '添加卡片', 'edit_posts', $main_menu_slug.'add', 'vg_card_add_page');
 		add_submenu_page($main_menu_slug,'一灭寂咔嚓设置', '我的咔嚓', 'edit_posts', $main_menu_slug.'my', 'vg_card_my_page');
+		add_submenu_page($main_menu_slug,'一灭寂咔嚓设置', '卡包列表', 'read', $main_menu_slug.'expansions', 'vg_expansions_list_page');
+		add_submenu_page($main_menu_slug,'一灭寂咔嚓设置', '国家列表', 'read', $main_menu_slug.'nations', 'vg_nations_list_page');
+		add_submenu_page($main_menu_slug,'一灭寂咔嚓设置', '集团列表', 'read', $main_menu_slug.'clans', 'vg_clans_list_page');
+		add_submenu_page($main_menu_slug,'一灭寂咔嚓设置', '种族列表', 'read', $main_menu_slug.'races', 'vg_races_list_page');
+		add_submenu_page($main_menu_slug,'一灭寂咔嚓设置', '稀有度列表', 'read', $main_menu_slug.'rarities', 'vg_rarities_list_page');
 		
-		$admin_menu_slug = plugin_dir_path(__FILE__).'admin/';
-		add_menu_page('一灭寂咔嚓™管理', '咔嚓™管理', 'administrator',$admin_menu_slug, 'vg_card_settings_page', plugins_url('/img/menu-icon.gif', __FILE__));
-		add_submenu_page($admin_menu_slug,'一灭寂咔嚓设置', 'Dashboard', 'administrator', $admin_menu_slug, 'vg_card_settings_page');
-		add_submenu_page($admin_menu_slug,'一灭寂咔嚓设置', '卡包', 'administrator', $admin_menu_slug.'expansions', 'vg_expansions_list_page');
-		add_submenu_page($admin_menu_slug,'一灭寂咔嚓设置', '国家', 'administrator', $admin_menu_slug.'nations', 'vg_nations_list_page');
-		add_submenu_page($admin_menu_slug,'一灭寂咔嚓设置', '集团', 'administrator', $admin_menu_slug.'clans', 'vg_clans_list_page');
-		add_submenu_page($admin_menu_slug,'一灭寂咔嚓设置', '种族', 'administrator', $admin_menu_slug.'races', 'vg_races_list_page');
-		add_submenu_page($admin_menu_slug,'一灭寂咔嚓设置', '稀有度', 'administrator', $admin_menu_slug.'rarities', 'vg_rarities_list_page');
-		
+
 	} else {
 		include plugin_dir_path(__FILE__).'install.php';
 		add_menu_page('一灭寂咔嚓™设置', '咔嚓™', 'administrator',$main_menu_slug, 'vg_card_install_page', plugins_url('/img/menu-icon.gif', __FILE__));
