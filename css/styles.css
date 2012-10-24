@@ -30,6 +30,10 @@
 	clear:right;
 }
 #VGCardAdd select, #VGCardAdd input {
-	width:200px;
+	width:360px;
+	clear:right;
+}
+#VGCardQuery select, #VGCardQuery input {
+	width:300px;
 	clear:right;
 }
