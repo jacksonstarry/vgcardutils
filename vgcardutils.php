@@ -119,6 +119,8 @@ wp_enqueue_script( 'vg_card_ajax_js', plugins_url( '/js/cardajax.js' , __FILE__)
 
 add_filter('query_vars', 'vgcardutils_queryvars' );
 
+// 基本是常量的枚舉，這些數據如果變化或者維護的話，手改吧，這些都是從數據庫裡面拿掉的，重構的人痲痹別給我再弄回去！
+// 全局定義枚舉開始
 global $__VGPowerEnum__;
 $__VGPowerEnum__ = array('-',0,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000);
 global $__VGUnittypeEnum__;
@@ -133,7 +135,27 @@ global $__VGTriggerEnum__;
 $__VGTriggerEnum__ = array('-','-','醒','治','引','☆');
 global $__VGSkillEnum__;
 $__VGSkillEnum__ = array('-','双判','截击','支援');
+// 全局定義枚舉結束
 
+//除了卡牌數據以外，這種索引映射數據全讀到內存也無所謂
+//用Session和Cookies可能會優化點速度吧。 。 。
+//然後開始把基本每天都在用動態枚舉（基本也不動態）讀到內存
+
+require_once plugin_dir_path(__FILE__).'curl/class-vgrace-curl-object.php';
+global $__VGRaceEnum__;
+$__VGRaceEnum__ = VgRace_CURLObject::listAll();
+require_once plugin_dir_path(__FILE__).'curl/class-vgclan-curl-object.php';
+global $__VGClanEnum__;
+$__VGClanEnum__ = VgClan_CURLObject::listAll();
+require_once plugin_dir_path(__FILE__).'curl/class-vgnation-curl-object.php';
+global $__VGNationEnum__;
+$__VGNationEnum__ = VgNation_CURLObject::listAll();
+require_once plugin_dir_path(__FILE__).'curl/class-vgrarity-curl-object.php';
+global $__VGRarityEnum__;
+$__VGRarityEnum__ = VgRarity_CURLObject::listAll();
+require_once plugin_dir_path(__FILE__).'curl/class-vgtag-curl-object.php';
+global $__VGTagEnum__;
+$__VGTagEnum__ = VgTag_CURLObject::listAll();
 
 function vgcardutils_queryvars( $vars )
 {
